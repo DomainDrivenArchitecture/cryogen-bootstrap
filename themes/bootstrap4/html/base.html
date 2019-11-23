@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="canonical" href="{{site-url}}{{uri}}">
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="author" content="{{author}}">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>{{title}}{% block subtitle %}{% endblock %}</title>
+
+
+    {% style "/css/bootstrap.min.css" %}
+    {% style "/css/meissa.css" %}
+    {% block additional_styles %}
+	{% endblock %}
+  </head>
+  <body>
+ 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <a class="navbar-brand" href="/">
+	  	{% include "/html/custom/logo.inc" %}
+	  </a>
+	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+	    <ul class="navbar-nav">
+	    	{% if home-page %}
+    		<li {%ifequal page.uri home-page.uri %} class="nav-item active" {% endifequal %}
+		    	{%ifunequal page.uri home-page.uri %} class="nav-item" {% endifunequal %}>
+				<a class="nav-link" href="/">{{home-page.title}}</a>
+			</li>
+			{% endif %}
+			<!--
+			{% if latest-posts %}
+				{% with latest=latest-posts|first %}
+		    		<li {%ifequal page.uri latest.uri %} class="nav-item active" {% endifequal %}
+				    	{%ifunequal page.uri latest.uri %} class="nav-item" {% endifunequal %}>
+						<a class="nav-link" href="{{latest.uri}}">news</a>
+					</li>
+				{% endwith %}
+			{% endif %}
+			-->
+    		{% for nav-page in pages|filter-navbar %}
+			<li {%ifequal page.uri nav-page.uri %} class="nav-item active" {% endifequal %}
+			    {%ifunequal page.uri nav-page.uri %} class="nav-item" {% endifunequal %}>
+			    {% with nav-children=nav-page.children|filter-navbar %}
+			    	{% if nav-children|empty? %}
+						<a class="nav-link" href="{{nav-page.uri}}">{{nav-page.title}}</a>
+					{% else %}
+	          			<li class="nav-item dropdown">
+	           				<a class="nav-link dropdown-toggle" href={{nav-page.uri}} id=id="{{nav-page.title}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{nav-page.title}}</a>
+							<div class="dropdown-menu" aria-labelledby="{{nav-page.title}}">
+							{% for child-page in nav-children %}
+								<a
+								{%ifequal page.uri child-page.uri %} class="dropdown-item active" {% endifequal %}
+			    				{%ifunequal page.uri child-page.uri %} class="dropdown-item" {% endifunequal %}
+								href="{{child-page.uri}}">{{child-page.title}}</a>
+							{% endfor %}
+							</div>
+	          			</li>
+					{% endif %}
+				{% endwith %}
+			</li>
+			{% endfor %}
+	    </ul>
+	  </div>
+
+	  {% include "/html/custom/social.inc" %}
+
+	</nav>
+
+	<div class="page">
+	{% block content %}
+		<h1> The content </h1>
+	{% endblock %}
+	</div>
+
+	{% include "/html/custom/footer.inc" %}
+	{% include "/html/custom/tracking.inc" %}
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  {% script "/js/jquery-3.1.1.slim.min.js" %}
+  {% script "/js/tether.min.js" %}
+  {% script "/js/bootstrap.min.js" %}
+  </body>
+</html>

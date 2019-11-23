@@ -1,0 +1,10 @@
+{% extends "/html/page-one-column.html" %}
+
+{% block header %}
+	{% include "/html/includes/top_spacer.inc" %}
+	{% include "/html/includes/headlines.inc" %}
+{% endblock %}
+
+{% block center %}
+	{{page.content|safe}}
+{% endblock %}
