@@ -12,7 +12,7 @@
 
 
     {% style "/css/bootstrap.min.css" %}
-    {% style "/css/meissa.css" %}
+    {% style "/custom/css/custom.css" %}
     {% block additional_styles %}
 	{% endblock %}
   </head>
@@ -22,7 +22,7 @@
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
 	  <a class="navbar-brand" href="/">
-	  	{% include "/html/custom/logo.inc" %}
+	  	{% include "/custom//html/includes/logo.inc" %}
 	  </a>
 	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
 	    <ul class="navbar-nav">
@@ -67,7 +67,7 @@
 	    </ul>
 	  </div>
 
-	  {% include "/html/custom/social.inc" %}
+	  {% include "/custom/html/includes/social.inc" %}
 
 	</nav>
 
@@ -77,8 +77,8 @@
 	{% endblock %}
 	</div>
 
-	{% include "/html/custom/footer.inc" %}
-	{% include "/html/custom/tracking.inc" %}
+	{% include "/custom/html/includes/footer.inc" %}
+	{% include "/custom/html/includes/tracking.inc" %}
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
