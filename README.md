@@ -2,7 +2,6 @@
 
 ## init submodule
 ```
-git submodule add git@github.com:jerger/cryogen-bootstrap.git
+git submodule add git@github.com:DomainDrivenArchitecture/cryogen-bootstrap.git
 ln -s `(pwd)`/cryogen-bootstrap/themes ./resources/templates
-
 ```
