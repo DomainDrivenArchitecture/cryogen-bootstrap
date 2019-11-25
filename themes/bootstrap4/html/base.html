@@ -11,18 +11,20 @@
     <title>{{title}}{% block subtitle %}{% endblock %}</title>
 
 
-    {% style "/css/bootstrap.min.css" %}
+	{% style "/css/bootstrap.min.css" %}
+	{% style "/css/fontawsome/fontawsome.css" %}
     {% style "/custom/css/custom.css" %}
     {% block additional_styles %}
 	{% endblock %}
   </head>
   <body>
+	{% include "/custom/html/includes/topper.inc" %}
  	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
 	  <a class="navbar-brand" href="/">
-	  	{% include "/custom//html/includes/logo.inc" %}
+	  	{% include "/custom/html/includes/navbar-logo.inc" %}
 	  </a>
 	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
 	    <ul class="navbar-nav">
@@ -66,8 +68,8 @@
 			{% endfor %}
 	    </ul>
 	  </div>
-
-	  {% include "/custom/html/includes/social.inc" %}
+	  
+	  {% include "/custom/html/includes/navbar-social.inc" %}
 
 	</nav>
 
