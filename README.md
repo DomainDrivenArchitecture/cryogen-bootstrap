@@ -1,7 +1,2 @@
-# bootstrap-io
+# cryogen-bootstrap
 
-## init submodule
-```
-git submodule add git@github.com:DomainDrivenArchitecture/cryogen-bootstrap.git
-ln -s `(pwd)`/cryogen-bootstrap/themes ./resources/templates
-```
