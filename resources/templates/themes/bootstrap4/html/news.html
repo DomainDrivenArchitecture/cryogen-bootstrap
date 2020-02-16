@@ -1,0 +1,22 @@
+{% extends "/html/page-three-column.html" %}
+
+{% block left %}
+	{% include "/html/includes/groups.inc" %}
+{% endblock %}
+
+{% block center %}
+	{% if latest-posts|not-empty %}
+		{% with post=latest-posts|first %}
+    		{% include "/html/includes/post-content.inc" %}    		
+		    {% include "/html/includes/post-prev-next.inc" %}
+		    {% include "/html/includes/disqus-comment.inc" %}
+	    {% endwith %}
+	    
+	    <h2>Ältere News</h2>
+	    {% include "/html/includes/latest-posts.inc" %}
+	    
+	    <h2>Archiv</h2>
+	    Hier geht's zum <a href="/archives" >Archiv</a>
+	    
+	{% endif %}
+{% endblock %}

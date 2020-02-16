@@ -1,0 +1,29 @@
+{% extends "/html/base.html" %}
+
+{%block subtitle %}: {{page.title}}{% endblock %}
+
+{% block content %}
+	{% block off-container-header %}
+	<div class="container below-nav">
+	</div>
+	{% endblock %}
+	<div class="container">
+		{% block header %}
+			{% include "/html/includes/top_spacer.inc" %}
+		{% endblock %}
+	
+		<div class="row">
+			<div class="col-lg-9 col-md-12">
+				{% block center %}
+					{{page.content|safe}}
+				{% endblock %}
+			</div>
+			<div class="col-lg-3 hidden-md-down">
+				{% include "/html/custom/site-navigation.inc" %}
+			</div>
+		</div>
+	
+		{% block footer %}
+		{% endblock %}
+	</div>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "/html/page-three-column.html" %}
+
+{% block center %}
+	{% with tags=posts %}
+		{% include "/html/includes/tags.inc" %}
+	{% endwith %}
+{% endblock %}

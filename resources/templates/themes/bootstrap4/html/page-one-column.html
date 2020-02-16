@@ -1,0 +1,23 @@
+{% extends "/html/base.html" %}
+
+{%block subtitle %}: {{page.title}}{% endblock %}
+
+{% block content %}
+	{% block off-container-header %}
+	<div class="container below-nav">
+	</div>
+	{% endblock %}	
+	<div class="container">
+		{% block header %}
+			{% include "/html/includes/top_spacer.inc" %}
+			{% include "/html/includes/publishing-date.inc" %}
+		{% endblock %}
+		
+		{% block main %}
+		    {{page.content|safe}}
+		{% endblock %}
+		
+		{% block footer %}
+		{% endblock %}
+	</div>
+{% endblock %}
