@@ -1,8 +1,0 @@
-<p>&nbsp;</p>
-{% include "/custom/html/meissa/site-navigation.inc" %}
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-{% include "/custom/html/meissa/partner.inc" %}
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-{% include "/custom/html/meissa/we-support.inc" %}
