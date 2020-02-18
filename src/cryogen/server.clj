@@ -6,7 +6,7 @@
             [cryogen-core.watcher :refer [start-watcher!]]
             [cryogen-core.plugins :refer [load-plugins]]
             [cryogen-core.compiler :refer [compile-assets-timed read-config]]
-            [cryogen-core.io :refer [path]]))
+            [cryogen-core.new-io :refer [path]]))
 
 (defn init []
   (load-plugins)
