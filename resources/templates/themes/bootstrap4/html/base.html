@@ -34,11 +34,13 @@
     		<li {%ifequal page.uri home-page.uri %} class="nav-item active" {% endifequal %}
 		    	{%ifunequal page.uri home-page.uri %} class="nav-item" {% endifunequal %}>
 				<a class="nav-link" href="/">
-					{% if latest-posts %}
-						home
-					{% else %}
-						{{home-page.title}}	
-					{% endif %}
+					{% with latest=latest-posts|first %}
+						{%ifequal page.title latest.title %}
+							home
+						{% else %}
+							{{home-page.title}}	
+						{% endifequal %}
+					{% endwith %}
 				</a>
 			</li>
 			{% endif %}
