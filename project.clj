@@ -1,4 +1,4 @@
-(defproject dda/cryogen-bootstrap "0.1.1-SNAPSHOT"
+(defproject dda/cryogen-bootstrap "0.1.1"
   :description "bootstrap theme for cryogen"
   :url "https://domaindrivenarchitecture.org"
   :license {:name "Apache License, Version 2.0"
