@@ -11,8 +11,8 @@
     <title>{{title}}{% block subtitle %}{% endblock %}</title>
 
 
-	{% style "/css/bootstrap.min.css" %}
-	{% style "/css/fonts/fontawesome/fontawesome.css" %}	          
+    {% style "/css/bootstrap.min.css" %}
+    {% style "/css/fonts/fontawesome/fontawesome.css" %}	          
     {% style "/css/custom.css" %}
     {% block additional_styles %}
 	{% endblock %}
@@ -22,7 +22,10 @@
 		{% include "/html/custom/topper.inc" %}
 	</div>
  	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-	  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	  <button class="navbar-toggler navbar-toggler-right" type="button" 
+		data-toggle="collapse" data-target="#navbarNavDropdown" 
+		aria-controls="navbarNavDropdown" aria-expanded="false" 
+		aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
 	  <a class="navbar-brand" href="/">
@@ -34,27 +37,14 @@
     		<li {%ifequal page.uri home-page.uri %} class="nav-item active" {% endifequal %}
 		    	{%ifunequal page.uri home-page.uri %} class="nav-item" {% endifunequal %}>
 				<a class="nav-link" href="/">
-					{% with latest=latest-posts|first %}
-						{%ifequal page.title latest.title %}
-							home
-						{% else %}
-							{{home-page.title}}	
-						{% endifequal %}
-					{% endwith %}
+					home
 				</a>
 			</li>
 			{% endif %}
-			<!--
-			{% if latest-posts %}
-				{% with latest=latest-posts|first %}
-		    		<li {%ifequal page.uri latest.uri %} class="nav-item active" {% endifequal %}
-				    	{%ifunequal page.uri latest.uri %} class="nav-item" {% endifunequal %}>
-						<a class="nav-link" href="{{latest.uri}}">news</a>
-					</li>
-				{% endwith %}
-			{% endif %}
-			-->
-    		{% for nav-page in pages|filter-navbar %}
+			<li class="nav-item{% if archives %} active{% endif %}" >
+				<a class="nav-link" href="{{archives-uri}}">blogs</a>
+			</li>
+			{% for nav-page in pages|filter-navbar %}
 			<li {%ifequal page.uri nav-page.uri %} class="nav-item active" {% endifequal %}
 			    {%ifunequal page.uri nav-page.uri %} class="nav-item" {% endifunequal %}>
 			    {% with nav-children=nav-page.children|filter-navbar %}

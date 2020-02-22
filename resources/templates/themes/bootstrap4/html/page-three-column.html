@@ -4,6 +4,7 @@
 
 {% block content %}
 	{% block off-container-header %}
+		{% include "/html/custom/content-header.inc" %}
 	{% endblock %}
 	<div class="container">
 	
@@ -19,7 +20,9 @@
 			{% endblock %}
 		</div>
 		<div class="col-lg-3 hidden-md-down">
-			{% include "/html/custom/site-navigation.inc" %}
+			{% block right %}
+				{% include "/html/custom/site-navigation.inc" %}
+			{% endblock %}
 		</div>
 	</div>
 	
