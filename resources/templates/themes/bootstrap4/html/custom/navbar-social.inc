@@ -1,7 +1,4 @@
 <!-- Link Social Media -->
-{% style "css/social/bootstrap-social.css" %}
-{% style "css/social/assets/css/font-awesome.css" %}
-
 <div class="social-buttons" style="display: inline-block; float: right;">
         <a title="GitHub" href="..." rel="external">
                 <span class="fab fa-github text-white"></span></a>
