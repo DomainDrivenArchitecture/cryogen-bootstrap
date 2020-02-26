@@ -12,7 +12,8 @@
   (load-plugins)
   (compile-assets-timed)
   (let [ignored-files (-> (read-config) :ignored-files)]
-    (start-watcher! "resources/templates" ignored-files compile-assets-timed)))
+    (start-watcher! "resources/templates" ignored-files compile-assets-timed)
+    (start-watcher! "content/templates" ignored-files compile-assets-timed)))
 
 (defn wrap-subdirectories
   [handler]
