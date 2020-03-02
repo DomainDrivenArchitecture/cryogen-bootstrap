@@ -14,7 +14,7 @@
 		<p class="text-muted"> 
 			Tags: 
 		    {% for tag in post.tags %}
-		    	{{tag.name}}{% if not forloop.last %}, {% endif %}   	
+		    	<a class="link-muted" href="{{tag.uri}}">{{tag.name}}</a>{% if not forloop.last %}, {% endif %}
 		    {% endfor %}  
 		</p>
 	{% endif %}

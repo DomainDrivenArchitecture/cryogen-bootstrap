@@ -35,3 +35,6 @@ html, body {
 	color: white;
 }
 
+a.link-muted {
+	color: #6c757d;
+}
