@@ -1,4 +1,4 @@
-(defproject dda/cryogen-bootstrap "0.1.5-SNAPSHOT"
+(defproject dda/cryogen-bootstrap "0.1.5"
   :description "bootstrap theme for cryogen"
   :url "https://domaindrivenarchitecture.org"
   :license {:name "Apache License, Version 2.0"
@@ -7,7 +7,7 @@
                  [ring/ring-devel "1.8.0"]
                  [compojure "1.6.1"]
                  [ring-server "0.5.0"]
-                 [dda/cryogen-core "0.2.1"]
+                 [dda/cryogen-core "0.2.3"]
                  [dda/cryogen-markdown "0.1.6"]]
   :repositories [["snapshots" :clojars]
                  ["releases" :clojars]]
