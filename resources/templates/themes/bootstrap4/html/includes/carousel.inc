@@ -10,8 +10,8 @@
   <div class="carousel-inner" role="listbox">
   	{% for sub-page in page.children|filter-sidebar %}
     	<div {% if forloop.first %}class="carousel-item active"{% else %}class="carousel-item"{% endif %}>
-       <img class="d-block img-fluid" src="{{sub-page.carousel-image}}" alt="{{sub-page.carousel-image}}">
-       <div class="carousel-caption d-none d-md-block text-left">
+       <img class="d-block w-100" src="{{sub-page.carousel-image}}" alt="{{sub-page.carousel-image}}">
+       <div class="carousel-caption d-block text-left">
        	<h1>{{sub-page.title}}</h1>
          <p>{{sub-page.abstract|safe}}</p>
          <p><a class="btn btn-lg btn-primary" 
